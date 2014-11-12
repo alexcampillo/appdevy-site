@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraph.org/schema/"> <head>
+        
+<meta property="og:title" content="Liive Concert App is in Open Beta!"/>
+<meta property="fb:page_id" content="43929265776" />        
+<!-- If you delete this tag, the sky will fall on your head -->
+<meta name="viewport" content="width=device-width">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ZURBemails</title>
+	
+<link rel="stylesheet" type="text/css" href="http://gallery.mailchimp.com/a8768f761bb1a11b6f95f65fc/files/email.css">
+
+
+
+
+        <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+            <script type="text/javascript">
+            try {
+                var _gaq = _gaq || [];
+                _gaq.push(["_setAccount", "UA-329148-88"]);
+                _gaq.push(["_setDomainName", ".campaign-archive.com"]);
+                _gaq.push(["_trackPageview"]);
+                _gaq.push(["_setAllowLinker", true]);
+            } catch(err) {console.log(err);}</script>
+                    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script> <script src="http://us4.campaign-archive2.com/js/mailchimp/fancyzoom.mc.js"></script>  <script type="text/javascript">
+    function incrementFacebookLikeCount() {
+        var current = parseInt($('#campaign-fb-like-btn span').html());
+        $('#campaign-fb-like-btn span').fadeOut().html(++current).fadeIn();
+    }
+
+    function getUrlParams(str) {
+        var vars = {}, hash;
+        if (!str) return vars;
+        var hashes = str.slice(str.indexOf('?') + 1).split('&');
+        for(var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+    
+    function setupSocialSharingStuffs() {
+        var numSocialElems = $('a[rel=socialproxy]').length;
+        var numSocialInitialized = 0;
+        var urlParams = getUrlParams(window.document.location.href);
+        var paramsToCopy = {'e':true, 'eo':true};
+        $('a[rel=socialproxy]').each(function() {
+            var href = $(this).attr('href');
+            var newHref = decodeURIComponent(href.match(/socialproxy=(.*)/)[1]);
+            // for facebook insanity to work well, it needs to all be run against just campaign-archive
+            newHref = newHref.replace(/campaign-archive(\d)/gi, 'campaign-archive');
+            var newHrefParams = getUrlParams(newHref);
+            for(var param in urlParams) {
+                if ((param in paramsToCopy) && !(param in newHrefParams)) {
+                    newHref += '&' + param + '=' + urlParams[param];
+                }
+            }
+            $(this).attr('href', newHref);
+            if (href.indexOf('facebook-comment') !== -1) {
+                $(this).fancyZoom({"zoom_id": "social-proxy", "width":620, "height":450, "iframe_height": 450});
+            } else {
+                $(this).fancyZoom({"zoom_id": "social-proxy", "width":500, "height":200, "iframe_height": 500});
+            }
+            numSocialInitialized++;
+                    });
+    }
+	if (window.top!=window.self){
+        $(function() {
+          var iframeOffset = $("#archive", window.parent.document).offset();
+          $("a").each(function () {
+              var link = $(this);
+              var href = link.attr("href");
+              if (href && href[0] == "#") {
+                  var name = href.substring(1);
+                  $(this).click(function () {
+                      var nameElement = $("[name='" + name + "']");
+                      var idElement = $("#" + name);
+                      var element = null;
+                      if (nameElement.length > 0) {
+                          element = nameElement;
+                      } else if (idElement.length > 0) {
+                          element = idElement;
+                      }
+         
+                      if (element) {
+                          var offset = element.offset();
+                          var height = element.height();
+                          //3 is totally arbitrary, but seems to work best.
+                          window.parent.scrollTo(offset.left, (offset.top + iframeOffset.top - (height*3)) );
+                      }
+         
+                      return false;
+                  });
+              }
+          });
+        });
+    }
+</script>  <script type="text/javascript">
+            $(document).ready(function() {
+                setupSocialSharingStuffs();
+            });
+        </script> <style type="text/css">
+            /* Facebook/Google+ Modals */
+            #social-proxy { background:#fff; -webkit-box-shadow: 4px 4px 8px 2px rgba(0,0,0,.2); box-shadow: 4px 4px 8px 2px rgba(0,0,0,.2); padding-bottom:35px; z-index:1000; }
+            #social-proxy_close { display:block; position:absolute; top:0; right:0; height:30px; width:32px; background:transparent url(http://cdn-images.mailchimp.com/awesomebar-sprite.png) 0 -200px; text-indent:-9999px; outline:none; font-size:1px; }
+            #social-proxy_close:hover { background-position:0 -240px; }
+            body { padding-bottom:50px !important; }
+        </style> </head>
+    
+    <body bgcolor="#FFFFFF">
+
+<!-- HEADER -->
+
+<!-- /HEADER -->
+
+
+<!-- BODY -->
+<table class="body-wrap">
+	<tr>
+		<td></td>
+		<td class="container" bgcolor="#FFFFFF">
+
+			<div class="content">
+			<table>
+				<tr>
+					<td>
+						
+						<h3>We have something amazing to show you!</h3>
+						<p class="lead">Introducing the first event based network for concerts.</p> 
+                       
+						
+						<!-- A Real Hero (and a real human being) -->
+						<p><img src="http://liive-inc.com/wp-content/uploads/liiveherofinal.png"></p><!-- /hero -->
+						
+						<!-- Callout Panel -->
+						<p class="callout">
+                        We just started open beta testing of our first concert apps. To get an early preview of the future of concert discovery,
+							 <a href="http://app.liive-inc.com/sign_up.php">sign up here! </a>
+						</p><!-- /Callout Panel -->
+                        
+                         <h3> A Note from Our Founder<small>  March 2013 </small></h3>
+                         <p>My name is Jason Dunlap and I am the Founder of Liive. I am extremely excited for concert season to approach us and I personally can't wait to show you some of the incredible apps our team is building. I hope you experience some of the most amazing live music this year. I believe that Liive can truly enhance that experience. </p>
+						
+						
+				
+                       
+												
+						<br>
+						<br>	
+                        <h3> What's Here Now? <small>  </small></h3>
+                        <p><img src="http://liive-inc.com/wp-content/uploads/Tickets-liive-final.png"></p>
+						<p> Through our partnership with SeatGeek, you can buy tickets for any concert directly through our website. Just go  <a class="&lt;a" href="http://tickets.liive-inc.com" "btn="" btn-success"="">here</a> and type in your zip code. Soon, we will utilize Seat Geek's recommendation API. Also, check out our music-streaming app<a class="&lt;a" href="http://listen.liive-inc.com" "btn="" btn-success"=""> here.</a> You can stream music from Spotify, Soundcloud, Youtube, Grooveshark and more directly from our website! To view our entire site,<a class="&lt;a" href="http://app.liive-inc.com" "btn="" btn-success"=""> go here.</a>
+                        
+                   
+						
+												
+						<br>
+						<br>	
+                        <h3>What's Coming Next?<small>  </small></h3>
+                        </p><p><img src="http://liive-inc.com/wp-content/uploads/liivemusicfinal5.png"></p>
+						<p>What to expect in the upcoming weeks and months
+                        <ul>
+                        <li>Enhanced profiles and additional fields.</li>
+                        <li> Recommendations for what to do after the concert. Real time activity on a map.</li>
+                        <li> The most advanced activity stream, just for concerts. </li> 
+                        <li>Upload pictures, audio and video from the concert you were at.</li>
+                        <li>Get updates from only people who were at the same concert as you.</li> 
+                        <li>Connect to your favorite networks. Integrate concert activity with Facebook timeline.</li></ul>
+                        <br>
+                        <br>
+                        <h3>Why use Liive?</h3>
+                        </p><p><img src="http://liive-inc.com/wp-content/uploads/liive-login-final.png"></p>
+                        <ul>
+                        <li>All your concert memories in one place.</li>
+                        <li> Meet new people who like the same music as you.</li>
+                        <li> Find what to do after the concert.</li>
+                        <li> Deals just  for you. Save on drinks, hotels, restaurants, merchandise and more.</li>
+                        <li> Get updates from concert promoters in real time.</li></ul>
+                        
+                        <br>
+                       <p><a href="http://app.liive-inc.com/sign_up.php">Sign up </a> <a href="http://tickets.liive-inc.com/">, go see some live shows</a> <a href="http://app.liive-inc.com">and keep in touch!</a></p>
+                        
+                       
+                       <p>Lots of Love,</p><p>
+                        
+                      </p><p>The Liive Team</p>
+                        
+                        
+                        
+                        
+                        
+                        
+						
+						<br>
+						<br>	
+												
+						<!-- social & contact -->
+						<table class="social" width="100%">
+							<tr>
+								<td>
+									
+									<!--- column 1 -->
+									<table align="left" class="column">
+										<tr>
+											<td>				
+												
+												<h5 class="">Connect with Us:</h5>
+												<p class=""><a href="http://www.facebook.com/liiveinc" class="soc-btn fb">Facebook </a><a href="https://twitter.com/LiiveInc" class="soc-btn tw">Twitter</a> 
+						
+												
+									 </p></td>
+										</tr>
+									</table><!-- /column 1 -->	
+									
+									<!--- column 2 -->
+									<table align="left" class="column">
+										<tr>
+											<td>				
+																			
+												<h5 class="">Contact Info:</h5>	
+                                                								<p><br>
+                Email: <a>press@liive-inc.com</a></p>
+                                                <p><img src="http://liive-inc.com/wp-content/uploads/1871final.png"></p>
+				
+                <p><a href="http://www.builtinchicago.org">
+<img src="http://bit.ly/vZwcR3">
+</a></p>
+                
+											</td>
+										</tr>
+									</table><!-- /column 2 -->
+									
+									<span class="clear"></span>	
+									
+								</td>
+							</tr>
+						</table><!-- /social & contact -->
+					
+					
+					</td>
+				</tr>
+			</table>
+			</div>
+									
+		</td>
+		<td></td>
+	</tr>
+</table><!-- /BODY -->
+
+<!-- FOOTER -->
+<table class="footer-wrap">
+	<tr>
+		<td></td>
+		<td class="container">
+			
+				<!-- content -->
+				<div class="content">
+				<table>
+				<tr>
+					<td align="center">
+						<p>
+							<a href="http://app.liive-inc.com/terms.html">Terms</a> |
+							<a href="http://app.liive-inc.com/privacy.html">Privacy</a> |
+							<a href="http://app.liive-inc.com/faq.html">FAQ</a>
+						</p>
+					</td>
+				</tr>
+			</table>
+				</div><!-- /content -->
+				
+		</td>
+		<td></td>
+	</tr>
+</table><!-- /FOOTER -->
+
+                        <center>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <table border="0" cellpadding="20" cellspacing="0" width="100%" style="background:#EEEEEE  !important; border-top:1px solid #DDDDDD; clear:both;" id="canspamBarWrapper">
+                                        <tr>
+                                                <td align="center" valign="top" style="padding-bottom:0;">
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="600" id="canspamBar">
+                                                                <tr>
+                                                                    <td align="left" valign="top" style="color:#505050 !important;font-family:Verdana,Arial,Sans !important;font-size:11px !important;font-weight:normal !important;font-style:normal !important;text-decoration:none !important;vertical-align:top !important;text-align:left !important;">
+                                                                        Sent to &lt;&lt;Email Address>> &mdash; <a href="http://liive-inc.us4.list-manage.com/about?u=a8768f761bb1a11b6f95f65fc&id=36c6df26bd&e=[UNIQID]&c=97dd115dee" style="font-family:Verdana,Arial,Sans !important;font-size:11px !important;font-weight:normal !important;font-style:normal !important;text-decoration:underline !important;color:#404040 !important;"><em>why did I get this?</em></a>
+                                                                                <br>
+                                                                                <a href="http://liive-inc.us4.list-manage.com/unsubscribe?u=a8768f761bb1a11b6f95f65fc&id=36c6df26bd&e=[UNIQID]&c=97dd115dee" style="font-family:Verdana,Arial,Sans !important;font-size:11px !important;font-weight:normal !important;font-style:normal !important;text-decoration:none !important;color:#369 !important;">unsubscribe from this list</a> |
+                                                                        <a href="http://liive-inc.us4.list-manage.com/profile?u=a8768f761bb1a11b6f95f65fc&id=36c6df26bd&e=[UNIQID]" style="font-family:Verdana,Arial,Sans !important;font-size:11px !important;font-weight:normal !important;font-style:normal !important;text-decoration:none !important;color:#369 !important;">update subscription preferences</a>
+                                                                        <br>
+                                                                        Liive, Inc. &middot; 222 Merchandise Mart Plaza, Suite 1212 &middot; Chicago, IL 60654 &middot; USA
+                                                                    </td>
+                                                                        <td align="left" valign="top">
+                                                                                <a href="http://www.mailchimp.com/monkey-rewards/?utm_source=freemium_newsletter&utm_medium=email&utm_campaign=monkey_rewards&aid=a8768f761bb1a11b6f95f65fc&afl=1"><img src="http://cdn-images.mailchimp.com/monkey_rewards/MC_MonkeyReward_20.png" border="0" alt="Email Marketing Powered by MailChimp" title="MailChimp Email Marketing" width="139" height="54"></a><br>&nbsp;
+                                                                        </td>
+                                                                </tr>
+                                                        </table>
+                                                </td>
+                                        </tr>
+                                </table>
+                        </center>
+                        <style type="text/css">
+                            @media only screen and (max-width: 480px){
+                                #canspamBar {display:inline;}
+                                #canspamBar td {display:block; margin:0 0 10px 0; text-align:center !important;}
+                            }
+                        </style></body>    
+</html>
+

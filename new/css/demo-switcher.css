@@ -1,0 +1,79 @@
+#demo-switcher {
+	position: fixed;
+	left: 0;
+	top: 150px;
+	display: block;
+	width: 250px;
+	background: #ffffff;
+	border: 2px solid #f0f0f0;
+	padding: 20px;
+	z-index: 90000;
+}
+
+#demo-switcher .demo-toggle {
+	position: absolute;
+	display: block;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	top: 18px;
+	right: -52px;
+	background: #333333;
+}
+
+#demo-switcher .demo-toggle i {
+	font-size: 24px;
+	color: #00baff;
+	line-height: 50px;
+}
+
+#demo-switcher .demo-toggle:hover {
+	background: #444444;
+}
+
+#demo-switcher .demo-toggle:hover i {
+	color: #f0f0f0;
+}
+
+#demo-switcher h2 {
+	font-size: 16px;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #111111;
+	margin-bottom: 8px;
+	display: block;
+	float: left;
+}
+
+#demo-switcher ul {
+	margin-bottom: 8px;
+	float: left;
+	width: 100%;
+}
+
+#demo-switcher ul li {
+	float: left;
+}
+
+#demo-switcher a.demo-option {
+	padding: 4px 10px;
+	background: #555555;
+	border-radius: 5px;
+	color: #ffffff;
+	float: left;
+	margin-right: 5px;
+	font-size: 12px;
+	text-transform: uppercase;
+	line-height: normal;
+	display: block;
+}
+
+#demo-switcher a.demo-option.demo-active {
+	background: #00baff;
+}
+
+#demo-switcher ul.template-set-color li a {
+	width: 30px;
+	height: 30px;
+}

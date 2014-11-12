@@ -1,0 +1,857 @@
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: IE Stylesheet
+
+So instead of using the respond.js file to add media query support
+to IE, we're going to use SASS to create an easily readable css file.
+Here, we import all the styles the standard stylesheet gets, only
+without the media queries. No need to worry about editing anything!
+
+******************************************************************/
+/*
+Remember, all the BASE styles are called already since IE can
+read those. Below, we need to import only the stuff IE can't 
+understand (what's inside the media queries). We also need to
+import the mixins file so SASS can understand the variables.
+*/
+/* import mixins */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins & Constants Stylesheet
+
+This is where you can take advantage of Sass' great features:
+Mixins & Constants. I won't go in-depth on how they work exactly,
+there are a few articles below that will help do that. What I will
+tell you is that this will help speed up simple changes like
+changing a color or adding CSS3 techniques gradients.
+
+A WORD OF WARNING: It's very easy to overdo it here. Be careful and
+remember less is more.
+
+******************************************************************/
+/*********************
+CLEARFIXIN'
+*********************/
+.clearfix {
+  zoom: 1; }
+  .clearfix:before, .clearfix:after {
+    content: "";
+    display: table; }
+  .clearfix:after {
+    clear: both; }
+
+/*********************
+TOOLS
+*********************/
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.image-replacement {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden; }
+
+/*********************
+COLORS
+Need help w/ choosing your colors? Try this site out:
+http://0to255.com/
+*********************/
+/*
+Here's a great tutorial on how to
+use color variables properly:
+http://sachagreif.com/sass-color-variables/
+*/
+/*********************
+TYPOGRAPHY
+*********************/
+@font-face {
+  font-family: 'CourierNew';
+  src: url("../fonts/couriernew.eot");
+  src: url("../fonts/couriernew-.eot#iefix") format("embedded-opentype"), url("../fonts/couriernew.woff") format("woff"), url("../fonts/couriernew.ttf") format("truetype"), url("../fonts/couriernew.svg#couriernew") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'AvenirReg';
+  src: url("../fonts/avenirnextregular.eot");
+  src: url("../fonts/avenirnextregular-.eot#iefix") format("embedded-opentype"), url("../fonts/avenirnextregular.woff") format("woff"), url("../fonts/avenirnextregular.ttf") format("truetype"), url("../fonts/avenirnextregular.svg#avenirnextregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'AvenirMed';
+  src: url("../fonts/avenirnextmedium.eot");
+  src: url("../fonts/avenirnextmedium-.eot#iefix") format("embedded-opentype"), url("../fonts/avenirnextmedium.woff") format("woff"), url("../fonts/avenirnextmedium.ttf") format("truetype"), url("../fonts/avenirnextmedium.svg#avenirnextmedium") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'AvenirDem';
+  src: url("../fonts/avenirnextdemibold.eot");
+  src: url("../fonts/avenirnextdemibold-.eot#iefix") format("embedded-opentype"), url("../fonts/avenirnextdemibold.woff") format("woff"), url("../fonts/avenirnextdemibold.ttf") format("truetype"), url("../fonts/avenirnextdemibold.svg#avenirnextdemibold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'AvenirBold';
+  src: url("../fonts/avenirnextbold.eot");
+  src: url("../fonts/avenirnextbold-.eot#iefix") format("embedded-opentype"), url("../fonts/avenirnextbold.woff") format("woff"), url("../fonts/avenirnextbold.ttf") format("truetype"), url("../fonts/avenirnextbold.svg#avenirnextbold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'MinionPro';
+  src: url("../fonts/minionproregular.eot");
+  src: url("../fonts/minionproregular-.eot#iefix") format("embedded-opentype"), url("../fonts/minionproregular.woff") format("woff"), url("../fonts/minionproregular.ttf") format("truetype"), url("../fonts/minionproregular.svg#minionproregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+.mono {
+  font-family: "CourierNew";
+  letter-spacing: 2px;
+  font-weight: regular;
+  text-transform: uppercase; }
+
+/* 	To embed your own fonts, use this syntax
+	and place your fonts inside the
+	library/fonts folder. For more information
+	on embedding fonts, go to:
+	http://www.fontsquirrel.com/
+	Be sure to remove the comment brackets.
+*/
+/*	@font-face {
+    	font-family: 'Font Name';
+    	src: url('../fonts/font-name.eot');
+    	src: url('../fonts/font-name-.eot#iefix') format('embedded-opentype'),
+             url('../fonts/font-name.woff') format('woff'),
+             url('../fonts/font-name.ttf') format('truetype'),
+             url('../fonts/font-name.svg#font-name') format('svg');
+    	font-weight: normal;
+    	font-style: normal;
+	}
+*/
+/*
+use the best ampersand
+http://simplebits.com/notebook/2008/08/14/ampersands-2/
+*/
+span.amp {
+  font-family: Baskerville,'Goudy Old Style',Palatino,'Book Antiqua',serif !important;
+  font-style: italic; }
+
+.text-left {
+  text-align: left; }
+
+.text-center {
+  text-align: center; }
+
+.text-right {
+  text-align: right; }
+
+.alert-help, .alert-info, .alert-error, .alert-success {
+  margin: 10px;
+  padding: 5px 18px;
+  border: 1px solid; }
+
+.alert-help {
+  border-color: #e8dc59;
+  background: #ebe16f; }
+
+.alert-info {
+  border-color: #bfe4f4;
+  background: #d5edf8; }
+
+.alert-error {
+  border-color: #f8cdce;
+  background: #fbe3e4; }
+
+.alert-success {
+  border-color: #deeaae;
+  background: #e6efc2; }
+
+/*********************
+TRANSITION
+*********************/
+/*
+I totally rewrote this to be cleaner and easier to use.
+You'll need to be using Sass 3.2+ for these to work.
+Thanks to @anthonyshort for the inspiration on these.
+USAGE: @include transition(all 0.2s ease-in-out);
+*/
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can
+really slow down your CSS. Don't overdo it.
+*********************/
+/* @include css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* @include box-sizing(border-box); */
+/* NOTE: value of "padding-box" is only supported in Gecko. So
+probably best not to use it. I mean, were you going to anyway? */
+/*********************
+BUTTONS
+*********************/
+.button, .button:visited {
+  display: inline-block;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  font-family: "AvenirBold", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.6em;
+  padding: 10px 30px;
+  text-decoration: none;
+  line-height: 1; }
+
+.blue-button, .blue-button:visited {
+  border-color: #1472ad;
+  text-shadow: 0 1px 1px #1472ad;
+  background-color: #1681c4;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#1990db), to(#1681c4));
+  background-image: -webkit-linear-gradient(top, #1990db, #1681c4);
+  background-image: -moz-linear-gradient(top, #1990db, #1681c4);
+  background-image: -o-linear-gradient(top, #1990db, #1681c4);
+  background-image: linear-gradient(to bottom, #1990db, #1681c4);
+  box-shadow: inset 0 0 3px #59b3ec; }
+  .blue-button:hover, .blue-button:focus, .blue-button:visited:hover, .blue-button:visited:focus {
+    border-color: #116396;
+    background-color: #1472ad;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1784c9), to(#1472ad));
+    background-image: -webkit-linear-gradient(top, #1784c9, #1472ad);
+    background-image: -moz-linear-gradient(top, #1784c9, #1472ad);
+    background-image: -o-linear-gradient(top, #1784c9, #1472ad);
+    background-image: linear-gradient(to bottom, #1784c9, #1472ad); }
+  .blue-button:active, .blue-button:visited:active {
+    background-color: #1990db;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1681c4), to(#1990db));
+    background-image: -webkit-linear-gradient(top, #1681c4, #1990db);
+    background-image: -moz-linear-gradient(top, #1681c4, #1990db);
+    background-image: -o-linear-gradient(top, #1681c4, #1990db);
+    background-image: linear-gradient(to bottom, #1681c4, #1990db); }
+
+.full {
+  width: 100%;
+  float: left;
+  overflow: hidden; }
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Grid Stylesheet
+
+I've seperated the grid so you can swap it out easily. It's
+called at the top the style.scss stylesheet.
+
+There are a ton of grid solutions out there. You should definitely
+experiment with your own. Here are some recommendations:
+
+http://gridsetapp.com - Love this site. Responsive Grids made easy.
+http://susy.oddbird.net/ - Grids using Compass. Very elegant.
+http://gridpak.com/ - Create your own responsive grid.
+
+The grid below is a combination of the 1140 grid and Twitter Boostrap. 
+I liked 1140 but Boostrap's grid was way more detailed so I merged them 
+together, let's see how this works out. If you want to use 1140, the original 
+values are commented out on each line.
+
+******************************************************************/
+.onecol {
+  width: 5.801104972%; }
+
+/* 4.85%;  } /* grid_1  */
+.twocol {
+  width: 14.364640883%; }
+
+/* 13.45%; } /* grid_2  */
+.threecol {
+  width: 22.928176794%; }
+
+/* 22.05%; } /* grid_3  */
+.fourcol {
+  width: 31.491712705%; }
+
+/* 30.75%; } /* grid_4  */
+.fivecol {
+  width: 40.055248616%; }
+
+/* 39.45%; } /* grid_5  */
+.sixcol {
+  width: 48.618784527%; }
+
+/* 48%;    } /* grid_6  */
+.sevencol {
+  width: 57.182320438000005%; }
+
+/* 56.75%; } /* grid_7  */
+.eightcol {
+  width: 65.74585634900001%; }
+
+/* 65.4%;  } /* grid_8  */
+.ninecol {
+  width: 74.30939226%; }
+
+/* 74.05%; } /* grid_9  */
+.tencol {
+  width: 82.87292817100001%; }
+
+/* 82.7%;  } /* grid_10 */
+.elevencol {
+  width: 91.436464082%; }
+
+/* 91.35%; } /* grid_11 */
+.twelvecol {
+  width: 99.999999993%; }
+
+/* 100%;   } /* grid_12 */
+.onecol, .twocol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .twelvecol {
+  position: relative;
+  float: left;
+  margin-left: 2.762430939%; }
+
+.first {
+  margin-left: 0; }
+
+.last {
+  float: right; }
+
+/******************************************************************
+Site Name: 
+Author: 
+
+Stylesheet: 481px and Up Stylesheet
+
+This stylesheet is loaded for larger devices. It's set to 
+481px because at 480px it would load on a landscaped iPhone.
+This isn't ideal because then you would be loading all those
+extra styles on that same mobile connection. 
+
+A word of warning. This size COULD be a larger mobile device,
+so you still want to keep it pretty light and simply expand
+upon your base.scss styles.
+
+******************************************************************/
+/*********************
+NAVIGATION STYLES
+*********************/
+/* .menu is clearfixed inside mixins.scss */
+.menu {
+  /* end .menu ul */ }
+  .menu ul {
+    /* end .menu ul li */
+    /* highlight current page */
+    /* end current highlighters */ }
+    .menu ul li {
+      /*
+      plan your menus and drop-downs wisely.
+      */ }
+      .menu ul li a {
+        /*
+        you can use hover styles here even though this size
+        has the possibility of being a mobile device.
+        */ }
+
+/* end .menu */
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+/* entry content */
+.entry-content {
+  /* at this larger size, we can start to align images */ }
+  .entry-content .alignleft, .entry-content img.alignleft {
+    margin-right: 1.5em;
+    display: inline;
+    float: left; }
+  .entry-content .alignright, .entry-content img.alignright {
+    margin-left: 1.5em;
+    display: inline;
+    float: right; }
+  .entry-content .aligncenter, .entry-content img.aligncenter {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    clear: both; }
+
+/* end .entry-content */
+/*********************
+FOOTER STYLES
+*********************/
+/*
+check your menus here. do they look good?
+do they need tweaking?
+*/
+/* end .footer-links */
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Tablet & Small Desktop Stylesheet
+
+Here's where you can start getting into the good stuff.
+This size will work on iPads, other tablets, and desktops.
+So you can start working with more styles, background images,
+and other resources. You'll also notice the grid starts to
+come into play. Have fun!
+
+******************************************************************/
+/*********************
+GENERAL STYLES
+*********************/
+body, html {
+  overflow: hidden;
+  height: 100%; }
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+/*********************
+HEADER STYLES
+*********************/
+/*********************
+NAVIGATION STYLES
+*********************/
+.nav {
+  /* end .menu ul li */
+  /* highlight current page */
+  /* end current highlighters */ }
+  .nav li {
+    /*
+    plan your menus and drop-downs wisely.
+    */
+    /* showing sub-menus */ }
+    .nav li a {
+      /*
+      you can use hover styles here even though this size
+      has the possibility of being a mobile device.
+      */ }
+    .nav li ul.sub-menu,
+    .nav li ul.children {
+      /* highlight sub-menu current page */ }
+      .nav li ul.sub-menu li,
+      .nav li ul.children li {
+        /*
+        if you need to go deeper, go nuts
+        just remember deeper menus suck
+        for usability. k, bai.
+        */ }
+
+/* end .nav */
+/*********************
+SIDEBARS & ASIDES
+*********************/
+.sidebar {
+  margin-top: 2.2em; }
+
+.widgettitle {
+  border-bottom: 2px solid #444;
+  margin-bottom: 0.75em; }
+
+.widget {
+  padding: 0 10px;
+  margin: 2.2em 0; }
+  .widget ul li {
+    margin-bottom: 0.75em;
+    /* deep nesting */ }
+    .widget ul li ul {
+      margin-top: 0.75em;
+      padding-left: 1em; }
+
+/* links widget */
+/* meta widget */
+/* pages widget */
+/* recent-posts widget */
+/* archives widget */
+/* tag-cloud widget */
+/* calendar widget */
+/* category widget */
+/* recent-comments widget */
+/* search widget */
+/* text widget */
+/*********************
+FOOTER STYLES
+*********************/
+/*
+you'll probably need to do quite a bit
+of overriding here if you styled them for
+mobile. Make sure to double check these!
+*/
+.footer-links ul li {
+  /*
+  be careful with the depth of your menus.
+  it's very rare to have multi-depth menus in
+  the footer.
+  */ }
+
+/* end .footer-links */
+#header {
+  margin: 5%; }
+
+#hero {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 140px;
+  height: 245px;
+  padding-top: 0;
+  min-height: 0; }
+  #hero .button {
+    padding: 15px 30px 18px 30px;
+    letter-spacing: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 0; }
+    #hero .button:hover {
+      color: #fff;
+      border-color: #f01d4f; }
+  #hero h1 {
+    font-size: 5em;
+    line-height: 1;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-family: "AvenirReg", Helvetica, Arial, sans-serif; }
+  #hero h2 {
+    margin-top: 25px;
+    font-size: 1.3em;
+    margin-bottom: 40px; }
+
+.contact_info {
+  position: absolute;
+  top: 0;
+  right: 0; }
+
+.contact_footer {
+  bottom: 0;
+  margin-bottom: 4%;
+  margin-top: 0;
+  float: none;
+  position: absolute; }
+
+.footer_toggle {
+  bottom: 0;
+  right: 0;
+  margin-bottom: 60px;
+  top: auto;
+  margin-top: 0;
+  margin-right: 5%; }
+  .footer_toggle .info {
+    opacity: 0.8; }
+
+#fade {
+  background: url(../images/fade.png) repeat;
+  background-size: auto 100% !important; }
+
+#page_menu {
+  width: 50%; }
+  #page_menu .contact {
+    margin: 30px auto;
+    padding: 20px 0;
+    width: 40%; }
+    #page_menu .contact a {
+      font-size: 1em; }
+  #page_menu ul {
+    margin-top: 10%; }
+    #page_menu ul li a {
+      font-size: 1.5em; }
+
+#page_content {
+  width: 50%;
+  padding-top: 180px;
+  padding-bottom: 100px; }
+  #page_content .page_content_content h2 {
+    margin-top: 60px; }
+
+.page .footer_toggle {
+  color: #fff;
+  position: absolute; }
+
+.desktop {
+  display: block; }
+
+.mobile {
+  display: none; }
+
+#container {
+  height: 100%; }
+
+.portfolio_outer_container {
+  height: 100%; }
+
+#container.portfolio_container {
+  padding-top: 0;
+  overflow: hidden; }
+
+#container.portfolio_container #page_menu {
+  width: 50%; }
+  #container.portfolio_container #page_menu a:hover {
+    color: #d10e3c; }
+  #container.portfolio_container #page_menu .contact {
+    width: 40%;
+    margin: 40px auto;
+    padding: 30px 0; }
+#container.portfolio_container .portfolio_item .portfolio_details h1 {
+  width: 70%; }
+
+#single_post_container #header.header_page {
+  width: 50%; }
+
+.full_blog_container #single_post_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 15;
+  overflow: auto; }
+  .full_blog_container #single_post_container #single_feature_image {
+    display: block; }
+  .full_blog_container #single_post_container .single_blog_content {
+    left: auto;
+    width: 65%;
+    position: absolute; }
+  .full_blog_container #single_post_container .single_blog_actions {
+    position: absolute;
+    right: 0;
+    margin-right: 10%; }
+
+.single-post {
+  height: 100%; }
+  .single-post #page_menu {
+    width: 65%; }
+
+#single_post_container {
+  margin-top: 0;
+  overflow: auto; }
+  #single_post_container .single_blog_content .single_blog_title {
+    width: 70%; }
+  #single_post_container .single_blog_content .single_blog_top h1 {
+    font-size: 2.3em; }
+  #single_post_container #header.header_page {
+    width: 50%; }
+    #single_post_container #header.header_page #logo {
+      display: block; }
+  #single_post_container .single_project_type {
+    margin-top: 0px; }
+  #single_post_container .single_work_content {
+    width: 75%;
+    position: absolute; }
+    #single_post_container .single_work_content .single_work_top h1 {
+      font-size: 2.3em;
+      letter-spacing: 5px;
+      width: 100%; }
+    #single_post_container .single_work_content .single_work_top .single_work_actions {
+      float: right;
+      width: 30%;
+      padding-top: 13px;
+      text-align: right; }
+      #single_post_container .single_work_content .single_work_top .single_work_actions .button {
+        margin-top: 20px;
+        padding: 10px 20px; }
+    #single_post_container .single_work_content .single_work_top .single_work_close {
+      margin: 13px -44px 0 0; }
+  #single_post_container #single_feature_image {
+    display: block; }
+  #single_post_container .single_work_summary {
+    margin-top: 50px; }
+    #single_post_container .single_work_summary .sixcol {
+      line-height: 1.8;
+      color: #666666;
+      width: 100%; }
+      #single_post_container .single_work_summary .sixcol.last h2 {
+        margin-top: 50px; }
+  #single_post_container .single_work_early {
+    margin-top: 150px; }
+    #single_post_container .single_work_early .wrap {
+      margin: 100px auto !important; }
+  #single_post_container .single_work_final img {
+    height: auto;
+    margin: 120px auto 0 auto; }
+  #single_post_container .single_work_final .wrap {
+    margin: 150px auto !important;
+    overflow: hidden; }
+  #single_post_container .single_work_web.margin_top {
+    margin-top: 150px; }
+  #single_post_container .single_work_web .wrap {
+    margin: 100px auto !important; }
+  #single_post_container .single_work_quote {
+    padding: 100px 0 130px 0; }
+
+#blog_header_fade {
+  display: block; }
+
+.blog_items_mobile {
+  display: none; }
+
+.blog_container {
+  display: block; }
+  .blog_container .blog_items_desktop {
+    display: block;
+    width: 100%; }
+  .blog_container .blog_item {
+    margin: 0;
+    width: 25%;
+    background-size: cover;
+    background-position: center center; }
+    .blog_container .blog_item .view_post {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 15; }
+    .blog_container .blog_item .featured_image {
+      display: block;
+      position: absolute;
+      z-index: 10;
+      height: 100%;
+      width: auto;
+      left: 0;
+      top: 0;
+      vertical-align: bottom; }
+  .blog_container .blog_item_1 {
+    width: 50%;
+    height: 540px;
+    color: #fff; }
+    .blog_container .blog_item_1 #fade {
+      display: block;
+      z-index: 11; }
+  .blog_container .blog_item_2 {
+    width: 25%;
+    height: 540px; }
+    .blog_container .blog_item_2 .blog_item_content {
+      z-index: 12;
+      color: #fff;
+      bottom: 0;
+      height: auto;
+      top: auto; }
+    .blog_container .blog_item_2 #fade {
+      display: block;
+      z-index: 11; }
+  .blog_container .blog_item_3 {
+    width: 25%;
+    height: 270px; }
+    .blog_container .blog_item_3 #fade {
+      display: block;
+      z-index: 11; }
+  .blog_container .blog_item_4 {
+    width: 25%;
+    height: 270px; }
+  .blog_container .blog_item_5 {
+    width: 25%;
+    height: 540px;
+    color: #fff; }
+  .blog_container .blog_item_6 {
+    width: 25%;
+    height: 540px;
+    color: #fff; }
+  .blog_container .blog_item_7 {
+    width: 50%;
+    height: 540px; }
+  .blog_container .blog_item_8 {
+    width: 47%;
+    height: 270px; }
+  .blog_container .blog_item_9 {
+    width: 23%;
+    height: 270px;
+    color: #fff; }
+  .blog_container .blog_item_10 {
+    width: 23%;
+    height: 540px; }
+    .blog_container .blog_item_10 .blog_item_content {
+      z-index: 12;
+      color: #fff;
+      bottom: 0;
+      height: auto;
+      top: auto; }
+    .blog_container .blog_item_10 #fade {
+      display: block;
+      z-index: 11; }
+    .blog_container .blog_item_10 .featured_image {
+      display: block;
+      position: absolute;
+      z-index: 10;
+      height: 100%;
+      width: auto;
+      left: 0;
+      top: 0; }
+
+.page #container {
+  background: url(../images/bg.jpg) no-repeat;
+  background-size: cover !important;
+  background-position: middle middle !important; }
+.page #fade {
+  display: block; }
+
+#talk .talk_inner {
+  margin: 2% 15% 4% 15%;
+  width: 70%;
+  height: 94%; }
+#talk #contact_form input[type="text"], #talk #contact_form textarea {
+  width: 33.333%; }
+#talk #contact_form textarea {
+  width: 100%; }
+
+#lost h1, .coming_soon h1 {
+  margin-top: 25%; }
+
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Desktop Stylsheet
+
+This is the desktop size. It's larger than an iPad so it will only
+be seen on the Desktop.
+
+******************************************************************/
+#single_post_container .single_work_content .single_work_top .single_work_actions .button {
+  padding: 10px 30px; }
+#single_post_container .single_work_summary .sixcol {
+  line-height: 1.8;
+  color: #666666;
+  width: 48.618784527%; }
+  #single_post_container .single_work_summary .sixcol.first {
+    padding-right: 50px; }
+    #single_post_container .single_work_summary .sixcol.first h2 {
+      margin-top: 0; }
+  #single_post_container .single_work_summary .sixcol.last {
+    padding: 0 25px; }
+    #single_post_container .single_work_summary .sixcol.last h2 {
+      margin-top: 0; }
+
+#container.portfolio_container .portfolio_item .portfolio_details h1 {
+  width: 50%; }
+
+#page_menu {
+  width: 40%; }
+
+#page_content {
+  width: 60%; }
+
+/* 
+you can call the larger styles if you want, but there's really no need 
+*/
+/******************************************************************
+ADDITIONAL IE FIXES
+These fixes are now ONLY seen by IE, so you don't have to worry
+about using prefixes, although it's best practice. For more info
+on using Modernizr classes, check out this link:
+http://www.modernizr.com/docs/
+******************************************************************/
+/*
+For example, you can use something like:
+
+.no-textshadow .class { ... }
+
+You can also target specific versions by using the classes applied to
+the html element. These can sometimes change, so take a look inside the
+header.php file to see what they are:
+
+
+.lt-ie8 .class { ... }
+
+*/
+
+/* Localized */

@@ -1,0 +1,84 @@
+a, a > * {
+	color: #a0d149;
+}
+
+strong {
+	color: #a0d149;
+}
+
+.section-icon i {
+	color: #a0d149;
+}
+
+.button:hover {
+	background: #a0d149;
+}
+
+input:hover, textarea:hover, select:hover {
+	background: #a0d149;
+}
+	
+input:focus, textarea:focus, select:focus {
+	background: #a0d149;
+}
+
+input[type="submit"], button {
+	color: #a0d149;
+}
+
+input[type="submit"]:hover, button:hover {
+	background: #a0d149;
+}
+
+.flexslider .flex-active {
+	background: #a0d149 !important;
+}
+
+nav#main-nav ul li a:hover i,
+nav#main-nav ul li.current a i {
+	color: #a0d149;
+}
+
+.home-slider ul.slides h1 span {
+	color: #a0d149;
+}
+
+.hi-icon:after {
+	background: #a0d149;
+}
+
+.testimonials-slider ul.slides h5 {
+	color: #a0d149;
+}
+
+#clients {
+	background: #a0d149;
+}
+
+.portfolio-filter li .button.active {
+	color: #a0d149 !important;
+}
+
+.portfolio .portfolio-item:hover h4 {
+	color: #a0d149;
+}
+
+#project-page .project-details li span {
+	color: #a0d149;
+}
+
+#project-page .button {
+	border: 2px solid #a0d149;
+}
+
+#team .team-list h5 {
+	color: #a0d149;
+}
+
+#newsletter input:hover, #newsletter input:focus {
+	background: #a0d149 !important;
+}
+
+#newsletter form#newsletter-form p.form-message {
+	color: #a0d149;
+}

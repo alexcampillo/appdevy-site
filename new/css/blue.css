@@ -1,0 +1,72 @@
+a, a > * {
+	color: #2996cc;
+}
+
+strong {
+	color: #2996cc;
+}
+
+.section-icon i {
+	color: #2996cc;
+}
+
+.button:hover {
+	background: #2996cc;
+}
+
+input:hover, textarea:hover, select:hover {
+	background: #2996cc;
+}
+	
+input:focus, textarea:focus, select:focus {
+	background: #2996cc;
+}
+
+input[type="submit"]:hover, button:hover {
+	background: #2996cc;
+}
+
+.flexslider .flex-active {
+	background: #2996cc !important;
+}
+
+nav#main-nav ul li a:hover i,
+nav#main-nav ul li.current a i {
+	color: #2996cc;
+}
+
+.home-slider ul.slides h1 span {
+	color: #2996cc;
+}
+
+.hi-icon:after {
+	background: #2996cc;
+}
+
+.testimonials-slider ul.slides h5 {
+	color: #2996cc;
+}
+
+#clients {
+	background: #2996cc;
+}
+
+.portfolio-filter li .button.active {
+	color: #2996cc !important;
+}
+
+.portfolio .portfolio-item:hover h4 {
+	color: #5aa9ce;
+}
+
+#project-page .project-details li span {
+	color: #2996cc;
+}
+
+#project-page .button {
+	border: 2px solid #2996cc;
+}
+
+#team .team-list h5 {
+	color: #2996cc;
+}

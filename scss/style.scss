@@ -1,0 +1,552 @@
+@import 'bourbon/bourbon'; // http://bourbon.io/
+
+@import '_variables.scss'; // colors, fonts etc...
+
+@import '_mixins.scss'; // custom mixins
+
+@import '_layout.scss'; // responsive grid and media queries
+
+/* -------------------------------- 
+
+Global Styles
+
+-------------------------------- */
+
+html * {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
+	@include box-sizing(border-box);
+}
+
+.articleContainer {
+	@include box-sizing(border-box);
+}
+
+body {
+	font: {
+		size: 100%;
+		family: $primary-font; // variables inside partials > _variables.scss
+	}
+	color: $color-1;
+	background-color: $color-4;
+}
+
+body, html {
+	height: 100%;
+	font-size: 100%;
+}
+
+a {
+	color: $color-1;
+	text-decoration: none;
+}
+
+p {
+
+
+	@media screen and (max-width: 600px) {
+		@include font-size(12px);
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+section {
+	width: 100%;
+}
+
+
+/* -------------------------------- 
+
+Main Styles
+
+-------------------------------- */
+
+.cd-img-replace { /* replace text with a background-image */
+	display: inline-block;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+}
+
+header {
+
+	.sm-logo {
+		width: 80px;
+		display: inline-block;
+		position: fixed;
+		z-index: 100;
+		bottom: 20px;
+		right: 20px;
+	}
+
+	@media screen and (max-width: 600px) {
+			.sm-logo {
+				display: none;
+			}
+			h2 {
+				@include font-size(20px);
+			}
+	} 
+
+}
+
+.headerContainer {
+		position: absolute;
+		@include center;
+		width: 90%;
+		max-width: $L;
+		text-align: left;
+
+		@media screen and (max-width: 600px) {
+			h2 {
+				@include font-size(20px);
+			}
+			.buttonHolder {
+				display: none;
+			}
+			max-width: $L;
+		}
+}
+
+.cd-section {
+	min-height: 100%;
+	position: relative;
+	padding: 2em 0;
+	width: 100%;
+
+	&:first-of-type {
+		@include linear-gradient(45deg, $color-1 0%, $color-6 90%);
+	}
+
+	.articleContainer {
+		position: absolute;
+		@include center;
+		width: 60%;
+		max-width: $M;
+		text-align: center;
+
+		@media screen and (max-width: 600px) {
+			max-width: $L;
+			width: 90%;
+			text-align: center;
+
+			h2 {
+				line-height: 1em;
+			}
+
+			p {
+				line-height: 2rem;
+			}
+		}
+
+
+	}
+
+	&:nth-of-type(odd) {
+		background-color: $color-3;
+
+		p {
+			color: lighten(black, 30%);
+		}
+
+		h2 {
+			color: $color-6;
+		}
+
+		button {
+			@include button-style-even;
+		}
+
+	}
+
+	&:nth-of-type(even) {
+		background-color: $color-4;
+
+		h2 {
+			color: $color-6;
+		}
+
+		p {
+			color: lighten(black, 30%);
+		}
+
+		button {
+			@include button-style-even;
+		}
+	}
+
+	h1, p {
+		position: relative;
+	}
+
+	h1 {
+		color: $color-3;
+		font-weight: 300;
+		text-transform: uppercase;
+		@include font-size(20px);
+		text-align: left;
+		margin-top: 20px;
+	}
+
+	h2 {
+		@include font-size(60px);
+		color: $color-5;
+		line-height: 1.5em;
+		letter-spacing: 2px;
+
+		@media screen and (max-width: 600px) {
+				@include font-size(30px);
+		}
+	}
+
+	p {
+		line-height: 1.6;
+	}
+
+	@include MQ(M) {
+		h1 {
+			@include font-size(30px);
+		}
+
+		p {
+			@include font-size(20px);
+			line-height: 2;
+		}
+	}
+}
+
+.cd-scroll-down {
+	position: absolute;
+	@include center(x);
+	bottom: 20px;
+	width: 38px;
+	height: 44px;
+	background: url('../img/cd-arrow-bottom.svg') no-repeat center center;
+}
+
+/* No Touch devices */
+
+.cd-nav-trigger {
+	display: none;
+}
+
+.no-touch #cd-vertical-nav {
+	position: fixed;
+	right: 60px;
+	@include center(y); // see partials > _mixins.scss
+	z-index: 1;
+
+	li {
+		text-align: right;
+	}
+
+	a {
+		display: inline-block;
+		@include clearfix;
+
+		/* prevent weird movements on hover when you use a CSS3 transformation - webkit browsers */
+		@include backface-visibility(hidden);
+		
+		span {
+			float: right;
+			display: inline-block;
+			@include transform(scale(.6));
+		}
+
+		&:hover span {
+			@include transform(scale(1)); 
+		}
+
+		&:hover .cd-label {
+			opacity: 1;
+		}
+
+		&.is-selected .cd-dot {
+			background-color: $color-4;
+		}
+	} 
+
+	.cd-dot {
+		position: relative;
+		/* we set a top value in order to align the dot with the label. If you change label's font, you may need to change this top value*/
+		top: 8px;
+		height: 12px;
+		width: 12px;
+		border-radius: 50%;
+		background-color: $color-3;
+		-webkit-transition: -webkit-transform 0.2s, background-color 0.5s;
+		-moz-transition: -moz-transform 0.2s, background-color 0.5s;
+		transition: transform 0.2s, background-color 0.5s;
+		@include transform-origin(50% 50%);	
+	}
+
+	.cd-label {
+		position: relative;
+		margin-right: 10px;
+		padding: .475em .5em;
+		color: #292929;
+		@include font-size(10px);
+		letter-spacing: .1em;
+		line-height: 1.5em;
+
+		-webkit-transition: -webkit-transform 0.2s, opacity 0.2s;
+		-moz-transition: -moz-transform 0.2s, opacity 0.2s;
+		transition: transform 0.2s, opacity 0.2s;
+		opacity: 0;
+		@include transform-origin(100% 50%);
+	}
+}
+
+/* Touch devices */
+
+.touch .cd-nav-trigger {
+	display: block;
+	z-index: 2;
+	position: fixed;
+	bottom: 30px;
+	right: 5%;
+	height: 44px;
+	width: 44px;
+	@include border-radius;
+	background: rgba($color-4, .9);
+
+	span {
+		position: absolute;
+		height: 4px;
+		width: 4px;
+		background-color: $color-1;
+		border-radius: 50%;
+		@include center;
+
+		&::before, &::after {
+			content: '';
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			left: 0;
+			background-color: inherit;
+			border-radius: inherit;
+		}
+
+		&::before {
+			top: -9px;
+		}
+
+		&::after {
+			bottom: -9px;
+		}
+	}
+}
+
+.touch #cd-vertical-nav {
+	position: fixed;
+	z-index: 1;
+	right: 5%;
+	bottom: 30px;
+	width: 90%;
+	max-width: 400px;
+	max-height: 90%;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	@include transform-origin(right bottom);
+	@include transform(scale(0));
+	@include transition-property(transform);
+	@include transition-duration(.2s);
+	@include border-radius;
+	background-color: rgba($color-4, .9);
+
+	a {
+		display: block;
+		padding: 1em;
+		border-bottom: 1px solid rgba($color-1, .1);
+
+		span:first-child {
+			display: none;
+		}
+
+		&.is-selected span:last-child {
+			color: $color-3;
+		}
+	}
+	
+	&.open {
+		@include transform(scale(1));
+	}
+
+	&.open + .cd-nav-trigger {
+		background-color: transparent;
+		
+		span {
+			background-color: rgba($color-1, 0);	
+		}
+
+		span::before, span::after {
+			background-color: rgba($color-1, 1);
+			height: 3px;
+			width: 20px;
+			border-radius: 0;
+			left: -8px;
+		}
+
+		span::before {
+			@include transform(rotate(45deg));
+			top: 1px;
+		}
+
+		span::after {
+			@include transform(rotate(135deg));
+			bottom: 0;
+		}
+	}
+
+	li:last-child a {
+		border-bottom: none;
+	}
+}
+
+@include MQ(M) {
+	.touch .cd-nav-trigger, .touch #cd-vertical-nav {
+		bottom: 40px;
+	}
+}
+
+#section1 {
+	button {
+		&:first-of-type {
+			margin-right: 20px;
+		}
+
+		@include button-style;
+}
+
+	.buttonHolder {
+		padding-top: 50px;
+		text-align: left;
+		position: relative;
+	}
+
+}
+
+.portfolio {
+
+
+	.buttonHolder {
+		margin-top: 20px;
+		text-align: center;
+	}
+
+	
+}
+
+#section5 {
+	height: 100%;
+}
+
+#section5 .articleContainer {
+	
+	.yourName, .yourEmail, .yourMessage {
+		border-radius: 10px;
+		border: none;
+		margin-bottom: 2%;
+	}
+
+	.yourName, .yourEmail {
+		width: 34%;
+		padding: 2% 1%;
+
+		@media screen and (max-width: 600px) {
+			width: 90%;
+		}
+	}
+
+	.yourMessage {
+		width: 70%;
+		padding-bottom: 15%;
+		@media screen and (max-width: 600px) {
+			width: 90%;
+		}
+	}
+	.yourName {
+		margin-right: 2%;
+
+		@media screen and (max-width: 600px) {
+			margin-right: 0;
+			margin-top: 2%;
+		}
+	}
+	button {
+		background-color: $color-1;
+		color: $color-2;
+		width: 30%;
+	}
+}
+
+#section6 {
+	.connectInfo {
+		font-size: 1.2em;
+		color: $color-1;
+		border-bottom: .1em dashed $color-1;
+	}
+}
+
+
+
+
+/*-----------------------------------
+
+Venture Esquire
+
+------------------------------------*/
+.VE-logo {
+	height: 100px;
+	display: inline-block;
+}
+
+/*-----------------------------------
+
+Resize
+
+------------------------------------*/
+@media screen and (max-width: 600px) {
+	h2 {
+		@include font-size(32px);
+	}
+}
+
+
+
+/*-----------------------------------
+
+slabtext.js
+
+------------------------------------*/
+.slabtexted .slabtext
+        {
+        display:-moz-inline-box;
+        display:inline-block;
+        white-space:nowrap;
+        }
+.slabtextinactive .slabtext
+        {
+        display:inline;
+        white-space:normal;
+        font-size:1em !important;
+        letter-spacing:inherit !important;
+        word-spacing:inherit !important;
+        *letter-spacing:0 !important;
+        *word-spacing:0 !important;
+        }
+.slabtextdone .slabtext
+        {
+        display:block;
+        }
+
+
+
+
