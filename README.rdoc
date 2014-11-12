@@ -1,6 +1,6 @@
 = Installation
 
-hello this is Stephany!  I'm using GIT.
+hello this is Stephany!  I'm using GIT.  This is testBranch
 
 Obtain the latest version of the Stripe PHP bindings with:
 
