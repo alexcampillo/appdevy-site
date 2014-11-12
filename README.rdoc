@@ -1,5 +1,7 @@
 = Installation
 
+hello this is Stephany!  I'm using GIT.  This is testBranch
+
 Obtain the latest version of the Stripe PHP bindings with:
 
     git clone https://github.com/stripe/stripe-php
